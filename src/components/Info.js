@@ -11,8 +11,8 @@ const Info = ({ login, repos, followers }) => (
 
 Info.propTypes = {
     login: PropTypes.string,
-    repos: PropTypes.string,
-    followers: PropTypes.string,
+    repos: PropTypes.number,
+    followers: PropTypes.number,
 };
 
 export default Info;
