@@ -5,18 +5,18 @@ export const createFieldChange = (value) => ({
     value,
 });
 
-export const createSetInfo = (login, repos, followers) => ({
+export const createSetInfo = (login, repos, followers, image) => ({
     type: SET_INFO,
     login,
     repos,
     followers,
+    image,
 });
 
 
 export const createSearchAsync = () => (dispatch, getState) => {
     fetch(`https://api.github.com/users/${getState().field}`).then( (response) => response.json())
                                                              .then((json) => {
-        console.log(json);
-        dispatch(createSetInfo(json.name, json.public_repos, json.followers));
+        dispatch(createSetInfo(json.name, json.public_repos, json.followers, json.avatar_url));
     });
 };

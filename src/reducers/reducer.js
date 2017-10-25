@@ -9,6 +9,7 @@ const reducer = (state = initialState(), action) => {
                 login: action.login,
                 repos: action.repos,
                 followers: action.followers,
+                image: action.image
             };
         case FIELD_CHANGE:
             return {

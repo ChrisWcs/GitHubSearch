@@ -7,9 +7,18 @@ import reducer from '../reducers/reducer';
 import ConInfo from '../containers/ConInfo';
 import ConInput from '../containers/ConInput';
 
+const style = {
+    col: {
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center"
+    }
+};
+
 const App = () => (
     <Provider store={createStore( reducer, applyMiddleware(thunk))}>
-        <div>
+        <div style={style.col}>
             <ConInput/>
             <ConInfo/>
         </div>
