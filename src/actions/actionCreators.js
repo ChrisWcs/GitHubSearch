@@ -1,13 +1,13 @@
 import { SET_INFO, FIELD_CHANGE } from './actions';
 
-export const createFieldChange = (event) => ({
+export const createFieldChange = (value) => ({
     type: FIELD_CHANGE,
-    value: event.target.value
+    value,
 });
 
 export const createSearchAsync = () => (dispatch, getState) => {
-    fetch(`https://api.github.com/users/${getState().field}`).then( () => {
-
+    fetch(`https://api.github.com/users/${getState().field}`).then( (response) => {
+        console.log(response.json());
     });
 };
 
